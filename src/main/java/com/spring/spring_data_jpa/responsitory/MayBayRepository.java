@@ -1,12 +1,14 @@
 package com.spring.spring_data_jpa.responsitory;
 
 import java.util.List;
-
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
+import org.springframework.data.jpa.repository.Query;
+import com.spring.spring_data_jpa.entity.MayBay;
 
-import com.spring.spring_data_jpa.entity.MayBay; 
-@Repository
 public interface MayBayRepository  extends JpaRepository<MayBay, Integer>{
-	List<MayBay> findByTamBay(int tamBay);
+	@Query(value = "SELECT * FROM maybay  WHERE TamBay > ?1", nativeQuery = true)
+    List<MayBay> findByTambay(int TamBay);
+	
+	@Query(value = "SELECT count(*) FROM maybay  WHERE Loai > ?1", nativeQuery = true)
+	int countLoaiMB(String loai);
 }

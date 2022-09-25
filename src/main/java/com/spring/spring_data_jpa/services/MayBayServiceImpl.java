@@ -21,7 +21,7 @@ public class MayBayServiceImpl implements MayBayService {
 	@Transactional
 	public List<MayBay> findByTamBay(int tamBay) {
 		// TODO Auto-generated method stub
-		return maybayRepository.findByTamBay(tamBay);
+		return maybayRepository.findByTambay(tamBay);
 	}
 
 

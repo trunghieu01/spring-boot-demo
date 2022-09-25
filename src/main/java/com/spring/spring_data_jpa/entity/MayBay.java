@@ -1,40 +1,42 @@
 package com.spring.spring_data_jpa.entity;
 
 import javax.persistence.Table;
-import javax.persistence.Id;
-import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 @Table(name = "maybay")
 public class MayBay {
 	@Id
-	private int maMB;
-	@Column(name = "Loai")
+	private int mamb;
 	private String loai;
-	@Column(name = "TamBay")
-	private int tamBay;
-	
+	private int tambay;
+
 	public int getMaMB() {
-		return maMB;
+		return mamb;
 	}
+
 	public void setMaMB(int maMB) {
-		this.maMB = maMB;
+		this.mamb = maMB;
 	}
+
 	public String getLoai() {
 		return loai;
 	}
+
 	public void setLoai(String loai) {
 		this.loai = loai;
 	}
+
 	public int getTamBay() {
-		return tamBay;
+		return tambay;
 	}
+
 	public void setTamBay(int tamBay) {
-		this.tamBay = tamBay;
+		this.tambay = tamBay;
 	}
-	@Override
-	public String toString() {
-		return "MayBay [maMB=" + maMB + ", loai=" + loai + ", tamBay=" + tamBay + "]";
-	}
+
+//	@OneToMany(mappedBy = "mamb", cascade = CascadeType.ALL)
+//	Collection<ChungNhan> chungnhan;
+
 }
